@@ -128,6 +128,9 @@ class HomeViewModel (
     }
 
 
+    fun observerFvMealsLiveData ():LiveData<List<Meal>>{
+        return fvMealSLiveData
+    }
 
 
 }
