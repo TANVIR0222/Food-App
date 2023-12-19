@@ -15,11 +15,9 @@ import com.example.foodapp.retrofit.RetrofitIns
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.http.Query
-import kotlin.math.log
 
 class HomeViewModel (
-    private var mealsData: MealDataBase
+     var mealsData: MealDataBase
 ):ViewModel() {
 
     private val randomMealLiveData = MutableLiveData<Meal?>()
