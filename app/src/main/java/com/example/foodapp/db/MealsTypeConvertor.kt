@@ -1,10 +1,13 @@
 package com.example.foodapp.db
 
-import java.util.jar.Attributes
+import androidx.room.TypeConverter
+import androidx.room.TypeConverters
 
+@TypeConverters
 class MealsTypeConvertor {
 
-    fun forAnyTOString (attribute: Any?):String{
+    @TypeConverter
+    fun forAnyToString(attribute: Any?): String {
 
         if (attribute == null)
 
@@ -14,9 +17,9 @@ class MealsTypeConvertor {
     }
 
 
+    @TypeConverter
 
-
-    fun forStringTOString (attribute: String?):Any{
+    fun forStringToAny(attribute: String?): Any {
 
         if (attribute == null)
 

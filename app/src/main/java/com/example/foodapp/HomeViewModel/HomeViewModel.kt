@@ -10,6 +10,7 @@ import com.example.foodapp.MealData.FvCategoryList
 import com.example.foodapp.MealData.Meal
 import com.example.foodapp.MealData.categoryMeal
 import com.example.foodapp.MealData.mealsData
+import com.example.foodapp.db.MealDataBase
 import com.example.foodapp.retrofit.RetrofitIns
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,12 +18,15 @@ import retrofit2.Response
 import retrofit2.http.Query
 import kotlin.math.log
 
-class HomeViewModel :ViewModel() {
+class HomeViewModel (
+    private var mealsData: MealDataBase
+):ViewModel() {
 
     private val randomMealLiveData = MutableLiveData<Meal?>()
     private val popularItemLivedata = MutableLiveData<List<categoryMeal>?>()
     private val categoryLiveData =MutableLiveData<List<Category>?>()
     private val searchCategoryLiveData = MutableLiveData<List<Meal>>()
+    private val fvMealSLiveData = mealsData.mealDao().getAllMeal()
 
 
     fun getRandomModel(){
@@ -122,6 +126,8 @@ class HomeViewModel :ViewModel() {
         return categoryLiveData
 
     }
+
+
 
 
 }

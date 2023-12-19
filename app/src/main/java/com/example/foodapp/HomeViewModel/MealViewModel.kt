@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.foodapp.MealData.Meal
 import com.example.foodapp.MealData.mealsData
+import com.example.foodapp.db.MealDataBase
 import com.example.foodapp.retrofit.RetrofitIns
 import kotlinx.coroutines.launch
 import retrofit2.Call
@@ -13,6 +14,9 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MealViewModel (
+
+    private val   mealDataBase: MealDataBase
+
 ) : ViewModel(){
 
     private val mealDetailsLivedata = MutableLiveData<Meal>()
@@ -41,16 +45,17 @@ class MealViewModel (
         return mealDetailsLivedata
     }
 
-    fun insertMeal(meal: Meal){
+   fun insertMeal(meal: Meal){
 
-        viewModelScope.launch {
+       viewModelScope.launch {
+           mealDataBase.mealDao().upset(meal)
+       }
 
-
-        }
-    }
+   }
 
     fun deleteMeal(meal: Meal){
         viewModelScope.launch {
+            mealDataBase.mealDao().delete(meal)
         }
     }
 

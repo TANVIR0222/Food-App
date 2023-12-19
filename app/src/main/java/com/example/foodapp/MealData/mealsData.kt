@@ -1,16 +1,22 @@
 package com.example.foodapp.MealData
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.example.foodapp.db.MealsTypeConvertor
 import com.google.gson.annotations.SerializedName
-
 
 data class mealsData(
     @SerializedName("meals")
     val meals: List<Meal?>?
 )
+
+@Entity(tableName = "mealInformation")
+
 data class Meal(
     @SerializedName("dateModified")
-    val dateModified: Any?,
+    val mealsTypeConvertor: Any?,
+    @PrimaryKey
     @SerializedName("idMeal")
     val idMeal: String,
     @SerializedName("strArea")
