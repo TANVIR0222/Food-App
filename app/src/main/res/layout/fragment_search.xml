@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SearchFragment">
+    tools:context=".Fragment.bottomSheet.SearchFragment">
 
     <LinearLayout
         android:id="@+id/search_bar"
@@ -12,6 +12,7 @@
         android:layout_marginStart="10dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -27,6 +28,7 @@
             android:hint="Search Meals "
             />
         <ImageView
+            android:id="@+id/next_Btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_arrow_forward_24"

@@ -12,11 +12,11 @@ interface MealApi {
     fun getRandomMeal ():Call<mealsData>
 
 
-    @GET("lookup.php?")
+    @GET("lookup.php")
     fun getMealDetails(@Query("i") id : String ) :Call<mealsData>
 
 
-    @GET("filter.php?")
+    @GET("filter.php")
     fun getPopularItem(@Query("c")  categoryName: String) :Call<CategoriList>
 
     @GET("categories.php")

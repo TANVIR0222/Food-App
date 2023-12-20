@@ -2,16 +2,14 @@ package com.example.foodapp.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.contentValuesOf
 import androidx.recyclerview.widget.AsyncListDiffer
-import androidx.recyclerview.widget.AsyncListUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.foodapp.MealData.Meal
 import com.example.foodapp.databinding.MealItemBinding
 
- class FavoriteMealAdapter : RecyclerView.Adapter<FavoriteMealAdapter.FavoritesViewHolder>() {
+ class MealAdapter : RecyclerView.Adapter<MealAdapter.FavoritesViewHolder>() {
 
     class FavoritesViewHolder(var binding:MealItemBinding):RecyclerView.ViewHolder(binding.root)
 

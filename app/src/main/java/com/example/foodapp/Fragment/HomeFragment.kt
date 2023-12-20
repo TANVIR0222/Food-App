@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -14,6 +15,7 @@ import com.example.foodapp.HomeViewModel.HomeViewModel
 import com.example.foodapp.MealData.Category
 import com.example.foodapp.MealData.Meal
 import com.example.foodapp.MealData.categoryMeal
+import com.example.foodapp.R
 import com.example.foodapp.activity.CategoryMealsActivity
 import com.example.foodapp.activity.MainActivity
 import com.example.foodapp.activity.MealActivity
@@ -79,8 +81,15 @@ class HomeFragment : Fragment() {
         onCategoryClick()
 
         onPopularLoneClick()
+        onSearchItemClick()
 
 
+    }
+
+    private fun onSearchItemClick() {
+        binding.imgSearch.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
+        }
     }
 
     private fun onPopularLoneClick() {

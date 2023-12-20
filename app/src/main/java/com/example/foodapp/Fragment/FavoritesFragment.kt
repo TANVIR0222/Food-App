@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodapp.HomeViewModel.HomeViewModel
 import com.example.foodapp.activity.MainActivity
-import com.example.foodapp.adapter.FavoriteMealAdapter
+import com.example.foodapp.adapter.MealAdapter
 import com.example.foodapp.databinding.FragmentFavoritesBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -20,7 +20,7 @@ class FavoritesFragment : Fragment() {
 
 
     private lateinit var binding: FragmentFavoritesBinding
-    lateinit var favoriteMealAdapter: FavoriteMealAdapter
+    lateinit var favoriteMealAdapter: MealAdapter
    private lateinit var viewModel: HomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,7 +78,7 @@ class FavoritesFragment : Fragment() {
     }
 
     private fun prepareRV() {
-        favoriteMealAdapter = FavoriteMealAdapter()
+        favoriteMealAdapter = MealAdapter()
         binding.RvFavorite.apply {
             layoutManager = GridLayoutManager(context,2,GridLayoutManager.VERTICAL,false)
             adapter = favoriteMealAdapter
