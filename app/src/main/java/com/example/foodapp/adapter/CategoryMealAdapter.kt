@@ -10,10 +10,10 @@ import com.example.foodapp.databinding.MealItemBinding
 
 class CategoryMealAdapter : RecyclerView.Adapter<CategoryMealAdapter.CategoryMealVH>() {
 
-     var mealList = ArrayList<categoryMeal>()
+     private var mealList = ArrayList<categoryMeal>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setMealList(mealList: List<categoryMeal>) {
+    fun setMealList(mealList: List<categoryMeal>?) {
 
         this.mealList = mealList as ArrayList<categoryMeal>
 

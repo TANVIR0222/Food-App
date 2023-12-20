@@ -25,4 +25,9 @@
         android:name="com.example.foodapp.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/mealBottomFragment"
+        android:name="com.example.foodapp.Fragment.bottomSheet.MealBottomFragment"
+        android:label="fragment_meal_bottom"
+        tools:layout="@layout/fragment_meal_bottom" />
 </navigation>

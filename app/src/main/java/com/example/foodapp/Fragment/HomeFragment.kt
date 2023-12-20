@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.example.foodapp.Fragment.bottomSheet.MealBottomFragment
 import com.example.foodapp.HomeViewModel.HomeViewModel
 import com.example.foodapp.MealData.Category
 import com.example.foodapp.MealData.Meal
@@ -77,7 +78,17 @@ class HomeFragment : Fragment() {
         observerCategoriesLiveData()
         onCategoryClick()
 
+        onPopularLoneClick()
 
+
+    }
+
+    private fun onPopularLoneClick() {
+        popularMealAdapter.onItemClick = { meal ->
+            val mealBottomSheet = meal.idMeal?.let { MealBottomFragment.newInstance(it) }
+
+            mealBottomSheet!!.show(childFragmentManager,"meal info")
+        }
     }
 
     private fun onCategoryClick() {

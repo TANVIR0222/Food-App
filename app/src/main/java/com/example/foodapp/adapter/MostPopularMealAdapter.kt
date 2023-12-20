@@ -4,11 +4,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.foodapp.MealData.Category
+import com.example.foodapp.MealData.FvCategoryList
 import com.example.foodapp.MealData.categoryMeal
 import com.example.foodapp.databinding.PoplurItemBinding
 
 class MostPopularMealAdapter : RecyclerView.Adapter<MostPopularMealAdapter.PopularViewHolder>() {
 
+
+    private lateinit var onLongClick :((categoryMeal) -> Unit)
     lateinit var onItemClick :((categoryMeal) -> Unit)
 
     private var mealList = ArrayList<categoryMeal>()
@@ -49,6 +53,15 @@ class MostPopularMealAdapter : RecyclerView.Adapter<MostPopularMealAdapter.Popul
         }
 
 
+        holder.itemView.setOnLongClickListener{
+            onLongClick.invoke(mealList[position])
+
+            true
+        }
+
+
     }
 
 }
+
+

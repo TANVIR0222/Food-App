@@ -83,13 +83,12 @@ class MealActivity : AppCompatActivity() {
 
 
     private var mealToSave:Meal? =null
+
     private fun observerMealDetailsLiveData() {
 
         mealMvvm.observerMealDetailsLiveData().observe(this
         ) { value ->
-
             onResponseCase()
-
 
             val meal = value
             mealToSave = meal

@@ -5,10 +5,8 @@ import com.google.gson.annotations.SerializedName
 
 data class CategoriList(
     @SerializedName("meals")
-    var meals: List<categoryMeal>?
-) {
-}
-
+    var meals: List<categoryMeal>
+)
 data class categoryMeal(
         @SerializedName("idMeal")
         var idMeal: String?,

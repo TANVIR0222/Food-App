@@ -7,7 +7,7 @@ data class FvCategoryList(
     @SerializedName("categories")
     val categories: List<Category>?
 )
-    data class Category(
+data class Category(
         @SerializedName("idCategory")
         val idCategory: String?,
         @SerializedName("strCategory")

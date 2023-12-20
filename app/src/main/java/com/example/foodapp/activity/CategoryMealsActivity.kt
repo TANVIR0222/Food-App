@@ -14,7 +14,7 @@ class CategoryMealsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCategoryMealsBinding
     private lateinit var categoryMealViewModel: CategoryMealViewModel
-    lateinit var categoryMealAdapter: CategoryMealAdapter
+    private lateinit var categoryMealAdapter: CategoryMealAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,10 +30,10 @@ class CategoryMealsActivity : AppCompatActivity() {
         categoryMealViewModel.getMealsByCategory(intent.getStringExtra(HomeFragment.CATEGORY_NAME)!!)
 
 
-        categoryMealViewModel.observerMealsLiveData().observe(this,Observer{ mealeLise->
-            binding.tvCategoryCount.text = mealeLise!!.size.toString()
+        categoryMealViewModel.observeMealsLiveData().observe(this,Observer{ cate->
+            binding.tvCategoryCount.text = cate!!.size.toString()
 
-            categoryMealAdapter.setMealList(mealeLise!!)
+            categoryMealAdapter.setMealList(cate)
 
         })
 
