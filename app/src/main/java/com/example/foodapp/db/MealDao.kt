@@ -14,6 +14,7 @@ interface MealDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upset(meal: Meal)
 
+//    meal data
     @Delete
     suspend fun delete(meal: Meal)
 
